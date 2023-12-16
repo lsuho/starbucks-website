@@ -1,20 +1,4 @@
-const searchEl = document.querySelector('.search');
-const searchInputEl = searchEl.querySelector('input');
-
-searchEl.addEventListener('click' , function () {
-    searchInputEl.focus();
-});
-
-searchInputEl.addEventListener('focus',function (){
-    searchEl.classList.add('focused');
-    searchInputEl.setAttribute('placeholder','통합검색');
-});
-
-searchInputEl.addEventListener('blur',function (){
-    searchEl.classList.remove('focused');
-    searchInputEl.setAttribute('placeholder','');
-});
-
+//스크롤에 따른 애니메이션 효과 추가
 const badgeEl = document.querySelector('header .badges');
 const totopEl = document.querySelector('#to-top');
 
@@ -61,6 +45,7 @@ fadeEls.forEach(function (fadeEl, index) {
     });
 });
 
+//슬라이드 애니메이션 javascript
 new Swiper('.inner__left .swiper-container' , {
     direction: 'vertical',
     autoplay: true,
@@ -77,7 +62,7 @@ new Swiper('.promotion .swiper-container',{
         delay: 5000
     },
     pagination: {
-        el: '.promotion .swiper-pagination', //페이지 번호 료소 선택자
+        el: '.promotion .swiper-pagination', //페이지 번호 요소 선택자
         clickable: true
     },
     navigation: {
@@ -97,6 +82,7 @@ new Swiper('.awards .swiper-container', {
     }
 });
 
+//프로모션에서 upload icon 클릭시 프로모션 메뉴 페이지 변경
 const promotionEl = document.querySelector('.promotion');
 const promotiontogglebtn = document.querySelector('.toggle-promotion');
 let isHidePromotion = false;
@@ -112,7 +98,7 @@ promotiontogglebtn.addEventListener('click' , function(){
     }
 });
 
-
+//아 이거 하다가 말아 버렸다. 이미지요소 상하 애니메이션 추가 
 function floatingobject(selector) {
     gsap.to(selector , 1 ,{
         y:20,
@@ -123,7 +109,7 @@ function floatingobject(selector) {
     })
 };
 
-
+//scroll magic js framework 스크립트 
 const spyEls = document.querySelectorAll('section.scroll-spy');
 spyEls.forEach(function(spyEl) {
      new ScrollMagic
